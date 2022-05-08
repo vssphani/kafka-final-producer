@@ -13,12 +13,14 @@ def getDbPeople():
 def processDepartments():
     try:
         input=request.get_json()
-        sno=input['sno']
+        eno=input['eno']
         name=input['name']
         city=input['city']
-        db.session.add(DbPerson(sno,name,city))
+        desig=input['desig']
+        age=input['age']
+        db.session.add(DbPerson(eno,name,city,desig,age))
         db.session.commit()
         return {"status": "success"}, 201
     except:
-        abort({'status':"Internal server error"},500)
+        abort({'status':"Internal server error"},500) 
 
