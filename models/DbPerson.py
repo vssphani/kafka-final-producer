@@ -8,7 +8,7 @@ class DbPerson(db.Model):
     desig=db.Column(db.String(30),index=False,unique=False,nullable=False)
     age=db.Column(db.Integer,primary_key=True)
 
-    def __init__(self,sno,name,city,desig,age):
+    def __init__(self,eno,name,city,desig,age):
         self.eno=eno
         self.name=name
         self.city=city
@@ -25,4 +25,4 @@ class DbPerson(db.Model):
             }
     
     def __repr__(self):
-        return str(self.serialize())
+        return str(self.serialize()) 
