@@ -5,23 +5,23 @@ class DbPerson(db.Model):
     eno=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(30),index=False,unique=False,nullable=False)
     city=db.Column(db.String(30),index=False,unique=False,nullable=False)
-    desig=db.Column(db.String(30),index=False,unique=False,nullable=False)
-    age=db.Column(db.Integer,primary_key=True)
+    designation=db.Column(db.String(30),index=False,unique=False,nullable=False)
+    basic=db.Column(db.Integer,primary_key=True)
 
-    def __init__(self,eno,name,city,desig,age):
+    def __init__(self,eno,name,city,designation,basic):
         self.eno=eno
         self.name=name
         self.city=city
-        self.desig=desig
-        self.age=age
+        self.designation=designation
+        self.basic=basic
     
     def serialize(self):
         return {
             'eno':self.eno,
             'name':self.name,
             'city':self.city,
-            'desig':self.desig,
-            'age':self.age
+            'desig':self.designation,
+            'age':self.basic
             }
     
     def __repr__(self):

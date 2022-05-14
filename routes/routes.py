@@ -14,8 +14,3 @@ def upload_image():
     )
 
     return {'message': 'file uploaded'}, 200
-
-@app.route("/download-file/<string:filename>",methods=["GET"])
-def getFileToDownload(filename):
-      client.download_file('mybuck65',filename,"c:\\new-downloads\\"+filename)
-      return {"message ": "check the download folder"}, 200 
