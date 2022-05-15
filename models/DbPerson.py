@@ -20,8 +20,8 @@ class DbPerson(db.Model):
             'eno':self.eno,
             'name':self.name,
             'city':self.city,
-            'desig':self.designation,
-            'age':self.basic
+            'designation':self.designation,
+            'basic':self.basic
             }
     
     def __repr__(self):
