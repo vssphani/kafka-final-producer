@@ -2,7 +2,7 @@ from config import db
 
 class DbPerson(db.Model):
     __tablename__='employee'
-    eno=db.Column(db.Integer,primary_key=True)
+    eno=db.Column(db.Integer,primary_key=True,unique=False,nullable=False)
     name=db.Column(db.String(30),index=False,unique=False,nullable=False)
     city=db.Column(db.String(30),index=False,unique=False,nullable=False)
     designation=db.Column(db.String(30),index=False,unique=False,nullable=False)

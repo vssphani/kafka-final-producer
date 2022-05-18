@@ -5,7 +5,7 @@ from producer import messageSender
 
 @app.route('/upload',methods=['POST'])
 def upload_image():
-    bucket='mybuck65'
+    bucket='phani2699'
     content_type=request.mimetype
     obj=request.files['file']
     filename=obj.filename
