@@ -1,7 +1,9 @@
 from config import app,client
 from flask import request
+from producer import messageSender 
 
-@app.route('/upload-file',methods=['POST'])
+
+@app.route('/upload',methods=['POST'])
 def upload_image():
     bucket='mybuck65'
     content_type=request.mimetype
@@ -12,5 +14,5 @@ def upload_image():
           Key=filename,
           ContentType=content_type
     )
-
-    return {'message': 'file uploaded'}, 200
+    messageSender(f'{filename} successfully uploaded')
+    return {'message': 'file uploaded'}
